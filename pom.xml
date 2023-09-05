@@ -34,10 +34,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git@gitlab.abstracta.us:BZ-plugins/dm3270.git</connection>
-    <developerConnection>scm:git:git@gitlab.abstracta.us:BZ-plugins/dm3270.git
-    </developerConnection>
-    <url>http://gitlab.abstracta.us/BZ-plugins/dm3270</url>
+    <connection>scm:git:git@github.com:stephanemartin/dm3270.git</connection>
+    <developerConnection>scm:git:git@github.com:stephanemartin/dm3270.git</developerConnection>
+    <url>https://github.com/stephanemartin/dm3270</url>
   </scm>
 
   <distributionManagement>

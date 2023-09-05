@@ -1,6 +1,7 @@
 package com.bytezone.dm3270.display;
 
 import com.bytezone.dm3270.attributes.StartFieldAttribute;
+import java.awt.Color;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -89,6 +90,14 @@ public class Field implements Iterable<ScreenPosition> {
 
   public boolean isVisible() {
     return startFieldAttribute.isVisible();
+  }
+
+  public boolean isIntensified() {
+    return startFieldAttribute.isIntensified();
+  }
+
+  public Color getColor() {
+    return startFieldAttribute.getColor();
   }
 
   public void setModified(boolean modified) {

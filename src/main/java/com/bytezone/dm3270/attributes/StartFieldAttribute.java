@@ -64,6 +64,17 @@ public class StartFieldAttribute extends Attribute {
     userModified = modified;
   }
 
+  public boolean isIntensified() {
+    return isHighIntensity;
+  }
+
+  public boolean isDetectable() {
+    return selectorPenDetectable;
+  }
+
+  public Color getColor() {
+    return isHighIntensity ? isProtected ? WHITE : RED : isProtected ? BLUE : GREEN;
+  }
   /*
    * http://www-01.ibm.com/support/knowledgecenter/SSGMGV_3.1.0/com.ibm.cics.
    * ts31.doc/dfhp3/dfhp3at.htm%23dfhp3at
@@ -80,13 +91,13 @@ public class StartFieldAttribute extends Attribute {
    * "white" as a color. You need to specify "neutral", which is displayed as white
    * on a terminal.)
    */
+
   @Override
   public ScreenContext process(ScreenContext unused1, ScreenContext unused2) {
+
     assert unused1 == null && unused2 == null;
 
-    Color color = isHighIntensity ? isProtected ? WHITE : RED : isProtected ? BLUE : GREEN;
-
-    return new ScreenContext(color, BLACK, (byte) 0, isHighIntensity, false);
+    return new ScreenContext(getColor(), BLACK, (byte) 0, isHighIntensity, false);
   }
 
   private String getColorName() {

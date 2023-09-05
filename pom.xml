@@ -3,17 +3,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.blazemeter</groupId>
+  <groupId>com.github.stephanemartin</groupId>
   <artifactId>dm3270-lib</artifactId>
   <!-- This version has no relation to the released version since the release version is extracted
   from git tag by Travis -->
-  <version>0.15</version>
+  <version>0.16-SNAPSHOT</version>
 
   <name>${project.artifactId}</name>
-  <description>This is a trimmed down version of https://github.com/dmolony/dm3270 to be used as
+  <description>
+    Fork of blazemeter trimmed down to add colors
+    This is a trimmed down version of https://github.com/dmolony/dm3270 to be used as
     TN3270 client library
   </description>
-  <url>https://github.com/blazemeter/dm3270</url>
+  <url>https://github.com/stephanemartin/dm3270</url>
 
   <licenses>
     <license>
@@ -24,10 +26,10 @@
 
   <developers>
     <developer>
-      <name>Blazemeter</name>
-      <email>ops@blazemeter.com</email>
-      <organization>Blazemeter</organization>
-      <organizationUrl>https://blazemeter.com/</organizationUrl>
+      <name>stephane martin</name>
+      <email>s.martin@tricentis.com</email>
+      <organization>Tricentis</organization>
+      <organizationUrl>https://www.tricentis.com/</organizationUrl>
     </developer>
   </developers>
 
@@ -39,10 +41,11 @@
   </scm>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/stephanemartin/dm3270</url>
+    </repository>
   </distributionManagement>
 
   <properties>
@@ -158,36 +161,6 @@
                 </goals>
               </execution>
             </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-                <configuration>
-                  <gpgArguments>
-                    <arg>--pinentry-mode</arg>
-                    <arg>loopback</arg>
-                  </gpgArguments>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.8</version>
-            <extensions>true</extensions>
-            <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
-            </configuration>
           </plugin>
         </plugins>
       </build>

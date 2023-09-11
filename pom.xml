@@ -5,13 +5,11 @@
 
   <groupId>com.github.stephanemartin</groupId>
   <artifactId>dm3270-lib</artifactId>
-  <!-- This version has no relation to the released version since the release version is extracted
-  from git tag by Travis -->
   <version>0.16-SNAPSHOT</version>
 
   <name>${project.artifactId}</name>
   <description>
-    Fork of blazemeter trimmed down to add colors
+    Fork of blazemeter trimmed down to add colors and another stuff.
     This is a trimmed down version of https://github.com/dmolony/dm3270 to be used as
     TN3270 client library
   </description>
@@ -114,6 +112,19 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
@@ -135,19 +146,7 @@
       <id>release</id>
       <build>
         <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.1</version>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
+
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>

@@ -230,4 +230,8 @@ public class Field implements Iterable<ScreenPosition> {
   public int getEndPosition() {
     return endPosition;
   }
+
+  public int getStartPosition() {
+    return startPosition;
+  }
 }

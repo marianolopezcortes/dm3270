@@ -152,7 +152,7 @@ public class TerminalClient {
     return pos + 1;
   }
 
-  private void setFieldText(Field field, String text) {
+  public void setFieldText(Field field, String text) {
     field.setText(text);
     int nextPosition = findFieldNextPosition(text);
     int cursorPosition =

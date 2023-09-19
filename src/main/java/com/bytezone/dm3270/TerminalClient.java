@@ -256,7 +256,7 @@ public class TerminalClient {
     }
   }
 
-  private Field getNextFieldFromPos(int linealPosition) throws NoSuchFieldException {
+  public Field getNextFieldFromPos(int linealPosition) throws NoSuchFieldException {
     Field ret;
     int maxLinealPos = getScreenDimensions().size;
     for (int i = linealPosition; i <= maxLinealPos; i++) {

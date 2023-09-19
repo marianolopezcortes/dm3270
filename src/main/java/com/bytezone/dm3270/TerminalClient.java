@@ -439,4 +439,7 @@ public class TerminalClient {
     consolePane.disconnect();
   }
 
+  public Screen getScreen() {
+    return screen;
+  }
 }

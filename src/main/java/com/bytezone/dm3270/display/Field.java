@@ -108,6 +108,10 @@ public class Field implements Iterable<ScreenPosition> {
     this.isCircular = isCircular;
   }
 
+  public boolean isAlphanumeric() {
+    return startFieldAttribute.isAlphanumeric();
+  }
+
   public boolean isCircular() {
     return this.isCircular;
   }

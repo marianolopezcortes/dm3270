@@ -72,6 +72,10 @@ public class StartFieldAttribute extends Attribute {
     return selectorPenDetectable;
   }
 
+  public boolean isAlphanumeric() { // A/a - Alphanumeric/numeric
+    return !isNumeric;
+  }
+
   public Color getColor() {
     return isHighIntensity ? isProtected ? WHITE : RED : isProtected ? BLUE : GREEN;
   }

@@ -70,7 +70,7 @@ public class TerminalServer implements Runnable {
         System.arraycopy(buffer, 0, message, 0, bytesRead);
         telnetListener.listen(TelnetSocket.Source.SERVER, message, LocalDateTime.now(), true);
       }
-    } catch (IOException e) {
+    } catch (Exception e) {
       if (running) {
         close();
         handleException(e);
@@ -78,7 +78,7 @@ public class TerminalServer implements Runnable {
     }
   }
 
-  private void handleException(IOException ex) {
+  private void handleException(Exception ex) {
     if (connectionListener != null) {
       connectionListener.onException(ex);
     } else {
